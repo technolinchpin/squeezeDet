@@ -8,7 +8,8 @@
 
 import xml.etree.ElementTree as ET
 import os
-import cPickle
+## vvibin changed import cPickle to import _pickle as cPickle for Py3
+import _pickle as cPickle
 import numpy as np
 
 def parse_rec(filename):
@@ -110,10 +111,9 @@ def voc_eval(detpath,
         for i, imagename in enumerate(imagenames):
             recs[imagename] = parse_rec(annopath.format(imagename))
             if i % 100 == 0:
-                print 'Reading annotation for {:d}/{:d}'.format(
-                    i + 1, len(imagenames))
+                print("Reading annotation for {:d}/{:d}".format( i + 1, len(imagenames)))
         # save
-        print 'Saving cached annotations to {:s}'.format(cachefile)
+        print("Saving cached annotations to {}".format(cachefile))
         with open(cachefile, 'w') as f:
             cPickle.dump(recs, f)
     else:
