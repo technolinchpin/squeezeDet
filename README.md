@@ -46,9 +46,13 @@ The following instructions are written for Linux-based distros.
 
 ## Testing with the Docker environment
 `Added by technolinchpin`
-1. The squeezeDet was tested in the docker container [waleedka/modern-deep-learning](https://hub.docker.com/r/waleedka/modern-deep-learning) with OpenCV,Tensorflow 0.12 and Python3
+1. The squeezeDet was tested in the docker container [waleedka/modern-deep-learning](https://hub.docker.com/r/waleedka/modern-deep-learning) with `OpenCV3,Tensorflow 0.12 and Python3`
 
-2. Run the docker container mapping the directory path of squeezeDEt in host 
+	```Shell
+	git clone https://github.com/technolinchpin/squeezeDet
+	```
+
+2. Run the docker container mapping the cloned path of squeezeDEt repo in host 
 	```Shell
 	sudo docker run -it -p 18888:8888 -p 16006:6006 -v ~/work/squeezeDEt:/home/squeezeDet 
         waleedka/modern-deep-learning
