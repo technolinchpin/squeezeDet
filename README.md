@@ -49,10 +49,10 @@ The following instructions are written for Linux-based distros.
 1. The squeezeDet was tested in the docker container [waleedka/modern-deep-learning](https://hub.docker.com/r/waleedka/modern-deep-learning) with OpenCV,Tensorflow 0.12 and Python3
 
 2. Run the docker container mapping the directory path of squeezeDEt in host 
-	'''Shell
+	```Shell
 	sudo docker run -it -p 18888:8888 -p 16006:6006 -v ~/work/squeezeDEt:/home/squeezeDet 
         waleedka/modern-deep-learning
-	'''
+	```
  (mapping to host ports 18888 for Jupyter notebook and 16006 for Tensorboard)
 
 ### Python3 changes
@@ -61,16 +61,16 @@ As the upstream work is tested with the Python2.7 and Tensorflow-gpu 1.0 version
 to fix the errors related to relative path usage to import modules in scripts in /config and also to fix the tf.concat argument order changes. The details are provided in `commit[b36c4a3d21b]`
 
 Also for Python3 , the `PYTHONPATH env variable` to be updated with the path for all required modules.
-   '''Shell
+   ```Shell
    PYTHONPATH=/usr/local/src/caffe/python:/home/squeezeDet/src/config:/home/squeezeDet/src/dataset:/ 
    home/sqeezeDet/src/nets
-   '''
+   ```
 
 Once the dependecies are met ,run the demo from the $SQUEEZEDETROOT=/work/squeezeDEt
 
-   '''Shell
+   ```Shell
    python ./src/demo.py
-   '''
+   ```
 
 ## Demo:
 - Download SqueezeDet model parameters from [here](https://www.dropbox.com/s/a6t3er8f03gdl4z/model_checkpoints.tgz?dl=0), untar it, and put it under `$SQDT_ROOT/data/` If you are using command line, type:
