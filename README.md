@@ -52,13 +52,28 @@ The following instructions are written for Linux-based distros.
 	git clone https://github.com/technolinchpin/squeezeDet
 	```
 
-2. Run the docker container mapping the cloned path of squeezeDEt repo in host 
+2. Run the docker container mapping the cloned path of squeezeDet repo in host 
 	```Shell
 	sudo docker run -it -p 18888:8888 -p 16006:6006 -v ~/work/squeezeDEt:/home/squeezeDet 
         waleedka/modern-deep-learning
 	```
  (mapping to host ports 18888 for Jupyter notebook and 16006 for Tensorboard)
 
+3. Install the packages per requirement.txt. Commit the changes as new docker image with tag `waleedka/modern-deep-learning:sequzeedet`
+
+	```Shell
+	osboxes:~/work/squeezeDEt$ sudo docker commit 27cac1 waleedka/modern-deep-learning:sequzeedet
+	sha256:18c049483781565ad0cc31ee4f63a77629da8cd47dae7077ec79e58575b53e9c
+
+	```
+4. Next time use the committed version of image that has all the dependencies
+	
+2. Run the docker container mapping the cloned path of squeezeDet repo `~/work/squeezeDEt` in host 
+	```Shell
+	sudo docker run -it -p 18888:8888 -p 16006:6006 -v ~/work/squeezeDEt:/home/squeezeDet 
+        waleedka/modern-deep-learning:sequzeedet
+	```
+ (mapping to host ports 18888 for Jupyter notebook and 16006 for Tensorboard)
 ### Python3 changes
 
 As the upstream work is tested with the Python2.7 and Tensorflow-gpu 1.0 version ,changes are done
