@@ -108,7 +108,7 @@ Once the dependecies are met ,run the demo from the $SQUEEZEDETROOT=/work/squeez
   cd $SQDT_ROOT/
   python ./src/demo.py
   ```
-  If the installation is correct, the detector should generate this image: ![alt text](https://github.com/BichenWuUCB/squeezeDet/blob/master/README/out_sample.png)
+  If the installation is correct, the detector should generate this image: ![alt text](https://github.com/technolinchpin/squeezeDet/blob/master/data/out/out_sample.png)
 
   To detect other image(s), use the flag `--input_path=./data/*.png` to point to input image(s). Input image(s) will be scaled to the resolution of 1242x375 (KITTI image resolution), so it works best when original resolution is close to that.  
 
